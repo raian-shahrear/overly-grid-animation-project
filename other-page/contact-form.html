@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+
+<!-- Inline CSS -->
+  <style>
+    body{
+      background-color: bisque;
+    }
+    .container{
+      width: 50%;
+      margin: 40px auto;
+    }
+    form{
+      width: 70%;
+      margin: 0 auto;
+      padding: 30px 40px 30px 30px;
+      background-color:rgb(50, 82, 143);
+    }
+    input[type=text], 
+    input[type=email], 
+    input[type=password]{
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px 5px;
+      font-size: 16px;
+    }
+    #contact label, 
+    #age label,
+    #DOB label,
+    #gend > label, #comment label{
+      display: block;
+      margin-bottom: 5px;
+      font-size: 20px;
+      color: #fff;
+    }
+    #contact select, 
+    #contact input[type=tel]{
+      padding: 10px 5px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    #contact input[type=tel]{
+      width: 30%
+    }
+    #age input[type=number], 
+    #DOB input[type=date]{
+      width: 42%;
+      padding: 10px 5px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    .genders label{
+      display: inline-block;
+      margin:0 10px 30px 0;
+      padding: 5px 10px;
+      font-size: 20px;
+      color: #fff;
+      border: 2px solid #3498db;
+    }
+    .genders label:hover{
+      background-color: #3498db;
+      transition: all 0.3s;
+    }
+    .genders input[type=radio]{
+      display: none;
+    }
+    .genders input[type=radio]:checked + label{
+      background-color: #3498db;
+    }
+    #comment textarea{
+      display: block;
+      width: 101%;
+      height: 15vh;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    #terms label{
+      display: inline-block;
+      margin-bottom: 30px;
+      font-size: 20px;
+      color: #fff;
+    }
+    #terms label a{
+      text-decoration: none;
+      color:rgb(204, 204, 204);
+    }
+    #terms label a:hover{
+      text-decoration: underline;
+    }
+    input[type=submit], input[type=reset]{
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-right: 20px;
+      background-color: rgb(45, 136, 139);
+      color: #fff;
+      font-weight: 700;
+      border: 2px solid transparent;
+      border-radius: 5px;
+    }
+    input[type=submit]:hover, input[type=reset]:hover{
+      background-color: transparent;
+      border-color: #fff;
+      color: #fff;
+      transition: all 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form>
+      <div>
+        <input type="text" name="name" id="name" placeholder="Full Name*" autofocus required>
+      </div>
+  
+      <div>
+        <input type="email" name="email" id="email" placeholder="Valid Email*" required>
+      </div>
+  
+      <div>
+        <input type="password" name="password" id="pass" placeholder="Password*" minlength="8" required>
+      </div>
+  
+      <div id="contact">
+        <label for="utel">Contact Number</label>
+        <select name="CountryCode">
+          <option value="BD" selected>+880</option>
+          <option value="INDIA">+99</option>
+          <option value="USA">+1</option>
+        </select>
+        <input type="tel" name="contact" id="utel">
+      </div>
+  
+      <div id="age">
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" value="18" min="18" max="65">
+      </div>
+  
+      <div id="DOB">
+        <label for="DOB">DOB</label>
+        <input type="date" name="DOB" id="DOB" min="2004-07-13">
+      </div>
+
+      <div id="gend">
+        <label>Gender</label>
+        <div class="genders">
+          <input type="radio" name="gender" id="male" value="male" checked>
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="female" value="female">
+          <label for="female">Female</label>
+          <input type="radio" name="gender" id="other" value="other">
+          <label for="other">Other</label>
+        </div>
+      </div>
+
+      <div id="comment">
+        <label for="comment">Leave A Message</label>
+        <textarea name="message" id="comment" cols="" rows="" placeholder="Say what is in your mind..."></textarea>
+      </div>
+
+      <div id="terms">
+        <input type="checkbox" name="terms" id="terms" required>
+        <label for="terms">*Please check the box, if you will ageree with our <a href="">Terms & Conditions</a></label>
+      </div>
+  
+      <input type="submit" value="Send">
+      <input type="reset" value="Refresh">
+    </form>
+  </div>
+  
+</body>
+</html>

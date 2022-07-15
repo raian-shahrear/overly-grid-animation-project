@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Source+Code+Pro&display=swap');
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Source Code Pro', monospace; */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+}
+/* END Common Style */
+
+
+/* Manu */
+#menu > ul{
+  display: flex;
+  justify-content: center;
+  background-color: hsla(193, 91%, 32%, 0.95);
+  position: fixed;
+  width: 100%;
+}
+#menu > ul > li{
+  position: relative;
+}
+#menu ul li a{
+  display: block;
+  padding: 20px 20px;
+  color: black;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+#menu ul li a:hover{
+  background-color: hsla(89, 58%, 75%, 0.65);
+  color: white;
+  transition: all 0.5s;
+}
+#menu > ul > li > ul{
+  display: none;
+  width:200px;
+  background-color: hsla(193, 91%, 32%, 0.95);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top:1px solid black;
+}
+#menu > ul > li:hover ul{
+  display: block;
+  top: 100%;
+}
+/* END Menu */
+
+
+/* Cover */
+:root{
+  --primary-color: rgba(26, 26, 26, 0.9);
+  --secondary-color: rgba(26, 26, 26, 0);
+}
+#cover::after{
+  content: 'Travel Blog';
+  font-size: 5rem;
+  font-family: 'Source Code Pro', monospace; 
+  font-weight: 700;
+  color: hsla(0, 0%, 100%, .75);
+}
+#cover{
+  height: 80vh;
+  margin-bottom: 150px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background: linear-gradient(360deg, var(--primary-color), var(--secondary-color)), url(./image/cover.jpg) no-repeat center / cover;
+}
+/* END Cover */
+
+
+/* Image Gallery */
+.container{
+  width: 85%;
+  margin: 0 auto 100px;
+}
+.container h1{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #38ada9;
+}
+#gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 3px;
+  grid-auto-flow: dense; /**/
+}
+#gallery img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}
+.small{
+  grid-column: auto / span 2;
+}
+.medium{
+  grid-column: auto / span 2;
+  grid-row: auto / span 1;
+}
+.large{
+  grid-column: auto / span 2;
+  grid-row: auto / span 2;
+}
+/* END Gallery */
+
+
+/* Animated Footer */
+#animation h3{
+  font-size: 1.7em;
+  font-family: 'Poppins', sans-serif;
+  color: hsla(0, 0%, 100%, .75);
+}
+#animation{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: #0c2461;
+  height: 30vh;
+  position: relative;
+  z-index: 1;
+}
+#animation::before{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url(./image/footer-shape1.png);
+  animation: lowOp 1s linear 1s infinite;
+}
+#animation::after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url(./image/footer-shape2.png);
+  animation: highOp 1s linear 1s infinite;
+}
+
+@keyframes lowOp {
+  0%{opacity: 0;}
+  50%{opacity: 1;}
+  100%{opacity: 0;}
+}
+@keyframes highOp {
+  0%{opacity: 1;}
+  50%{opacity: 0;}
+  100%{opacity: 1;}
+}
+/* END Footer */
